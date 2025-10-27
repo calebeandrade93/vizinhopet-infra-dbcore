@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-dbcore
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD_CORE}
+      MYSQL_DATABASE: db_users
+      MYSQL_USER: ${MYSQL_USER_CORE}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD_CORE}
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbcore_data:/var/lib/mysql
+
+volumes:
+  dbcore_data:
