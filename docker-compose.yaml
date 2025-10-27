@@ -9,7 +9,7 @@ services:
       MYSQL_USER: ${MYSQL_USER_CORE}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD_CORE}
     ports:
-      - "3306:3306"
+      - ${MYSQL_PORTS_CORE}
     volumes:
       - dbcore_data:/var/lib/mysql
 
